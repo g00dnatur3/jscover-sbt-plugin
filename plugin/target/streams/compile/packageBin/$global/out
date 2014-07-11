@@ -1,0 +1,19 @@
+[0m[[0minfo[0m] [0mPackaging /Users/user/jscover-sbt-plugin/plugin/target/scala-2.10/sbt-0.13/jscover-sbt-plugin-1.0.jar ...[0m
+[0m[[0mdebug[0m] [0mInput file mappings:[0m
+[0m[[0mdebug[0m] [0m	sbt/JSCoverPlugin$$anonfun$1.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/user/jscover-sbt-plugin/plugin/target/scala-2.10/sbt-0.13/classes/sbt/JSCoverPlugin$$anonfun$1.class[0m
+[0m[[0mdebug[0m] [0m	sbt[0m
+[0m[[0mdebug[0m] [0m	  /Users/user/jscover-sbt-plugin/plugin/target/scala-2.10/sbt-0.13/classes/sbt[0m
+[0m[[0mdebug[0m] [0m	sbt/JSCoverPlugin$$anonfun$2.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/user/jscover-sbt-plugin/plugin/target/scala-2.10/sbt-0.13/classes/sbt/JSCoverPlugin$$anonfun$2.class[0m
+[0m[[0mdebug[0m] [0m	sbt/JSCoverPlugin.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/user/jscover-sbt-plugin/plugin/target/scala-2.10/sbt-0.13/classes/sbt/JSCoverPlugin.class[0m
+[0m[[0mdebug[0m] [0m	sbt/sbt.plugins[0m
+[0m[[0mdebug[0m] [0m	  /Users/user/jscover-sbt-plugin/plugin/target/scala-2.10/sbt-0.13/classes/sbt/sbt.plugins[0m
+[0m[[0mdebug[0m] [0m	sbt/JSCoverPlugin$$anonfun$3.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/user/jscover-sbt-plugin/plugin/target/scala-2.10/sbt-0.13/classes/sbt/JSCoverPlugin$$anonfun$3.class[0m
+[0m[[0mdebug[0m] [0m	sbt/CoverageUtils.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/user/jscover-sbt-plugin/plugin/target/scala-2.10/sbt-0.13/classes/sbt/CoverageUtils.class[0m
+[0m[[0mdebug[0m] [0m	sbt/JSCoverPlugin$.class[0m
+[0m[[0mdebug[0m] [0m	  /Users/user/jscover-sbt-plugin/plugin/target/scala-2.10/sbt-0.13/classes/sbt/JSCoverPlugin$.class[0m
+[0m[[0minfo[0m] [0mDone packaging.[0m

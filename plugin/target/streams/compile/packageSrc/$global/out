@@ -1,0 +1,7 @@
+[0m[[0minfo[0m] [0mPackaging /Users/user/jscover-sbt-plugin/plugin/target/scala-2.10/sbt-0.13/jscover-sbt-plugin-1.0-sources.jar ...[0m
+[0m[[0mdebug[0m] [0mInput file mappings:[0m
+[0m[[0mdebug[0m] [0m	sbt/JSCoverPlugin.scala[0m
+[0m[[0mdebug[0m] [0m	  /Users/user/jscover-sbt-plugin/plugin/src/main/scala/sbt/JSCoverPlugin.scala[0m
+[0m[[0mdebug[0m] [0m	sbt/CoverageUtils.java[0m
+[0m[[0mdebug[0m] [0m	  /Users/user/jscover-sbt-plugin/plugin/src/main/java/sbt/CoverageUtils.java[0m
+[0m[[0minfo[0m] [0mDone packaging.[0m

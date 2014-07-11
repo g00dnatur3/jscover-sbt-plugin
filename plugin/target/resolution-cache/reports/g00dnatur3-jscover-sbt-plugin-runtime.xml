@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ivy-report.xsl"?>
+<ivy-report version="1.0">
+	<info
+		organisation="g00dnatur3"
+		module="jscover-sbt-plugin"
+		revision="1.0"
+		extra-sbtVersion="0.13"
+		extra-scalaVersion="2.10"
+		conf="runtime"
+		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
+		date="20140711031417"/>
+	<dependencies>
+		<module organisation="com.github.tntim96" name="JSCover">
+			<revision name="1.0.11" status="release" pubdate="20140604194455" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://tntim96.github.com/JSCover/" downloaded="false" searched="false" default="false" conf="default(compile), default, compile, runtime, master" position="0">
+				<license name="GNU General Public License, version 2" url="http://www.gnu.org/licenses/gpl-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="3717" time="0" location="/Users/user/.ivy2/cache/com.github.tntim96/JSCover/ivy-1.0.11.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/com/github/tntim96/JSCover/1.0.11/JSCover-1.0.11.pom"/>
+				<caller organisation="g00dnatur3" name="jscover-sbt-plugin" conf="compile, runtime" rev="1.0.11" rev-constraint-default="1.0.11" rev-constraint-dynamic="1.0.11" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="JSCover" type="jar" ext="jar" status="no" details="" size="135633" time="0" location="/Users/user/.ivy2/cache/com.github.tntim96/JSCover/jars/JSCover-1.0.11.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/com/github/tntim96/JSCover/1.0.11/JSCover-1.0.11.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.github.tntim96" name="rhino">
+			<revision name="1.7R5pre03" status="release" pubdate="20140602234041" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://developer.mozilla.org/en/Rhino" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="1">
+				<license name="Mozilla Public License, Version 2.0" url="http://mozilla.org/MPL/2.0/"/>
+				<metadata-artifact status="no" details="" size="4944" time="0" location="/Users/user/.ivy2/cache/com.github.tntim96/rhino/ivy-1.7R5pre03.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/com/github/tntim96/rhino/1.7R5pre03/rhino-1.7R5pre03.pom"/>
+				<caller organisation="com.github.tntim96" name="JSCover" conf="default, compile, runtime, master" rev="1.7R5pre03" rev-constraint-default="1.7R5pre03" rev-constraint-dynamic="1.7R5pre03" callerrev="1.0.11"/>
+				<artifacts>
+					<artifact name="rhino" type="jar" ext="jar" status="no" details="" size="1187857" time="0" location="/Users/user/.ivy2/cache/com.github.tntim96/rhino/jars/rhino-1.7R5pre03.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/com/github/tntim96/rhino/1.7R5pre03/rhino-1.7R5pre03.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+	</dependencies>
+</ivy-report>
