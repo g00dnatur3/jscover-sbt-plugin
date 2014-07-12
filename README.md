@@ -129,7 +129,7 @@ public CoverageTestSettings createTestSettings() {
 ```
 If you cannot tell, `CoverageTestSettings` extends `GlobalSettings`
 
-Viewing the reports
+Viewing the Coverage Report
 -------------------------
 
 The command `play test` should execute your test cases and generate the final report.
