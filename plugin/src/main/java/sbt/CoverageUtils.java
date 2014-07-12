@@ -13,20 +13,21 @@ import jscover.util.IoUtils;
 
 public class CoverageUtils {
 
-	public static void jscoverGenerateInstrumentedApp() {
-		File f = new File("public/jscover");
-		if (f.exists()) {
-			f.delete();
-		}
-		jscoverGenerateInstrumentedApp("public/apps/advisor", "public/jscover/advisor");
-		new File("public/jscover/reports").mkdir();
+	public String sourcePath;
+	public String destinationPath;
+	public String reportsPath;
+	
+	public void init(String sourcePath, String destinationPath, String reportsPath) {
+		this.sourcePath = sourcePath;
+		this.destinationPath = destinationPath;
+		this.reportsPath = reportsPath;
 	}
 	
-	public static void jscoverGenerateInstrumentedApp(String srcPath, String dstPath) {
+	public void jscoverGenerateInstrumentedApp() {
 		String[] args = new String[]{
 	        "-fs",
-	        srcPath,
-	        dstPath
+	        sourcePath,
+	        destinationPath
 	    };
 		try {
 			Main.main(args);
@@ -35,8 +36,8 @@ public class CoverageUtils {
 		}
 	}
 
-	public static void mergeJsonReports() {
-		File reportsDir = new File("public/jscover/reports");
+	public void mergeJsonReports() {
+		File reportsDir = new File(reportsPath);
 		if (!reportsDir.exists()) {
 			throw new RuntimeException("Reports directory does not exist");
 		} else {

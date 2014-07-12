@@ -1,4 +1,0 @@
-[0m[[0minfo[0m] [0m:: delivering :: g00dnatur3#jscover-sbt-plugin;1.0 :: 1.0 :: release :: Fri Jul 11 03:14:20 PDT 2014[0m
-[0m[[0mdebug[0m] [0m	options = status=release pubdate=Fri Jul 11 03:14:20 PDT 2014 validate=true resolveDynamicRevisions=true merge=true resolveId=null pubBranch=null[0m
-[0m[[0minfo[0m] [0m	delivering ivy file to /Users/user/jscover-sbt-plugin/plugin/target/scala-2.10/sbt-0.13/ivy-1.0.xml[0m
-[0m[[0mdebug[0m] [0m	deliver done (31ms)[0m

@@ -1,1 +1,0 @@
-Index.PACKAGES = {"sbt" : [{"class" : "sbt\/CoverageUtils.html", "name" : "sbt.CoverageUtils"}, {"object" : "sbt\/JSCoverPlugin$.html", "name" : "sbt.JSCoverPlugin"}]};
