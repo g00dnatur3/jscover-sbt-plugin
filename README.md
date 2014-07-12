@@ -12,7 +12,7 @@ First, add the following to the `project/plugins.sbt` file:
 ```
 resolvers += Resolver.url("sbt-plugins", url("http://dl.bintray.com/g00dnatur3/sbt-plugins"))(Resolver.ivyStylePatterns)
 
-addSbtPlugin("g00dnatur3" % "jscover-sbt-plugin" % "1.0.02")
+addSbtPlugin("g00dnatur3" % "jscover-sbt-plugin" % "1.0.03")
 
 addSbtPlugin("com.eed3si9n" % "sbt-buildinfo" % "0.3.2")
 ```
@@ -31,7 +31,7 @@ buildInfoPackage := "sbt"
 resolvers += "play-utils" at "http://dl.bintray.com/g00dnatur3/play-utils/"
 
 libraryDependencies ++= Seq(
-  "g00dnatur3" %% "jscover-play-utils" % "1.0.07"
+  "g00dnatur3" %% "jscover-play-utils" % "1.0.08"
 )
 ```
 There are three primary settings `jscoverSourcePath`, `jscoverDestinationPath`, and `jscoverReportsDir`
@@ -70,7 +70,7 @@ buildInfoPackage := "sbt"
 resolvers += "play-utils" at "http://dl.bintray.com/g00dnatur3/play-utils/"
 
 libraryDependencies ++= Seq(
-  "g00dnatur3" %% "jscover-play-utils" % "1.0.07"
+  "g00dnatur3" %% "jscover-play-utils" % "1.0.08"
 )
 ```
 IMPORTANT:  If you do decided to customize these settings, make sure to keep them within the "public" folder (for obvious reasons)
