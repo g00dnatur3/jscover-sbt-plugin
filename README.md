@@ -73,7 +73,7 @@ libraryDependencies ++= Seq(
   "g00dnatur3" %% "jscover-play-utils" % "1.0.05"
 )
 ```
-IMPORTANT:  If you do decided to customize these settings, make sure you keep them within the "public" folder (for obvious reasons)
+IMPORTANT:  If you do decided to customize these settings, make sure to keep them within the "public" folder (for obvious reasons)
 
 
 Writing a Test
