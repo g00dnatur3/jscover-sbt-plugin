@@ -56,9 +56,8 @@ public class FluentTestWithCoverage extends FluentAdapter {
 				File f = new File(CoverageTestSettings.REPORTS_DIR + "/" + className + "/");
 				if (f.exists()) {
 					f.delete();
-				} else {
-					f.mkdir();
 				}
+				f.mkdir();
 				FileWriter fw = new FileWriter(new File(f, "jscoverage.json"));
 				IOUtils.write(json, fw);
 				fw.close();
