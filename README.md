@@ -96,6 +96,9 @@ public class ExampleTest extends FluentTestWithCoverage {
 }
 ```
 
+You can find more information on how to write a FluentLenium test here: 
+`https://github.com/FluentLenium/FluentLenium`
+
 Writing a Test with custom CoverageTestSettings
 -------------------------
 
