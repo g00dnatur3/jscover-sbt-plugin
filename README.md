@@ -70,7 +70,7 @@ buildInfoPackage := "sbt"
 resolvers += "play-utils" at "http://dl.bintray.com/g00dnatur3/play-utils/"
 
 libraryDependencies ++= Seq(
-  "g00dnatur3" %% "jscover-play-utils" % "1.0.05"
+  "g00dnatur3" %% "jscover-play-utils" % "1.0.06"
 )
 ```
 IMPORTANT:  If you do decided to customize these settings, make sure to keep them within the "public" folder (for obvious reasons)
@@ -107,7 +107,7 @@ You can override this method to customize your test settings, for example:
 @Override
 public CoverageTestSettings createTestSettings() {
 
-	return new CoverageTestSettings(true) {
+	return new CoverageTestSettings() {
 		
 	    @Override
 	    public <A> A getControllerInstance(Class<A> controllerClass) throws Exception {
