@@ -12,7 +12,7 @@ First, add the following to the `project/plugins.sbt` file:
 ```
 resolvers += Resolver.url("sbt-plugins", url("http://dl.bintray.com/g00dnatur3/sbt-plugins"))(Resolver.ivyStylePatterns)
 
-addSbtPlugin("g00dnatur3" % "jscover-sbt-plugin" % "1.0.03")
+addSbtPlugin("g00dnatur3" % "jscover-sbt-plugin" % "1.0.04")
 
 addSbtPlugin("com.eed3si9n" % "sbt-buildinfo" % "0.3.2")
 ```
