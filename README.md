@@ -53,7 +53,7 @@ If you want to customize these settings, you can do the following inside your `b
 ```
 JSCoverPlugin.jscoverSettings
 
-jscoverSourcePath := "public/apps/<your custom source path>"
+jscoverSourcePath := "public/<your custom source path>"
 
 jscoverDestinationPath := "public/<your custom destination path>"
 
