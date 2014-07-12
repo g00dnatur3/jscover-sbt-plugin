@@ -31,7 +31,7 @@ buildInfoPackage := "sbt"
 resolvers += "play-utils" at "http://dl.bintray.com/g00dnatur3/play-utils/"
 
 libraryDependencies ++= Seq(
-  "g00dnatur3" %% "jscover-play-utils" % "1.0.05"
+  "g00dnatur3" %% "jscover-play-utils" % "1.0.07"
 )
 ```
 There are three primary settings `jscoverSourcePath`, `jscoverDestinationPath`, and `jscoverReportsDir`
@@ -70,7 +70,7 @@ buildInfoPackage := "sbt"
 resolvers += "play-utils" at "http://dl.bintray.com/g00dnatur3/play-utils/"
 
 libraryDependencies ++= Seq(
-  "g00dnatur3" %% "jscover-play-utils" % "1.0.06"
+  "g00dnatur3" %% "jscover-play-utils" % "1.0.07"
 )
 ```
 IMPORTANT:  If you do decided to customize these settings, make sure to keep them within the "public" folder (for obvious reasons)
@@ -147,3 +147,5 @@ If you have customized the `jscoverDestinationPath` to be something different, t
 
 For example, if your `jscoverDestinationPath` is customized to "public/coverage" then the url would be `http://localhost:9000/coverage/jscoverage.html`
 
+Please note: if any tests fail the coverage report will not be generated and available for viewing.
+To run individual tests, go into the play console and run `testOnly package.Classname`
