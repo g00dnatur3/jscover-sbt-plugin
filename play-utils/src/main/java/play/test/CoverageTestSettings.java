@@ -14,11 +14,7 @@ public class CoverageTestSettings extends GlobalSettings {
 	
 	public static final String REPORTS_DIR = invokeUsingReflection("sbt.BuildInfo", "jscoverReportsDir");
 	
-	private final boolean isJsCoverRoutingEnabled;
-	
-	public CoverageTestSettings() {
-		isJsCoverRoutingEnabled = false;
-	}
+	protected final boolean isJsCoverRoutingEnabled;
 	
 	public CoverageTestSettings(boolean isJsCoverRoutingEnabled) {
 		 this.isJsCoverRoutingEnabled = isJsCoverRoutingEnabled;

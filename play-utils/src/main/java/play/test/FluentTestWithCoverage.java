@@ -10,8 +10,6 @@ import java.io.FileWriter;
 
 import org.apache.commons.io.IOUtils;
 import org.fluentlenium.core.FluentAdapter;
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.rules.TestRule;
 import org.junit.rules.TestWatcher;
@@ -20,19 +18,17 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-import play.test.TestServer;
-
 public class FluentTestWithCoverage extends FluentAdapter {
 	
-	protected static TestServer testServer;
+	protected TestServer testServer;
 	
-	protected static String className;
+	protected String className;
 	
-	protected static WebDriver webDriver;
+	protected WebDriver webDriver;
 	
-	protected static int port = 3333;
+	protected int port = 3333;
 	
-	protected static String baseUrl;
+	protected String baseUrl;
 	
 	public FluentTestWithCoverage() {
 		className = getClass().getSimpleName();
@@ -43,6 +39,9 @@ public class FluentTestWithCoverage extends FluentAdapter {
         @Override
         public void starting(Description description) {
             super.starting(description);
+    		baseUrl = "http://localhost:" + port;
+        	testServer = testServer(port, fakeApplication(createTestSettings()));
+        	start(testServer);
             initFluent(getDefaultDriver()).withDefaultUrl(getDefaultBaseUrl());
             initTest();
         }
@@ -50,6 +49,7 @@ public class FluentTestWithCoverage extends FluentAdapter {
         @Override
         public void finished(Description description) {
             super.finished(description);
+            stop(testServer);
             try {
 				String json = (String) ((JavascriptExecutor) webDriver)
 						.executeScript("return jscoverage_serializeCoverageToJSON();");
@@ -68,13 +68,6 @@ public class FluentTestWithCoverage extends FluentAdapter {
             quit();
         }
     };
-    
-	@BeforeClass
-    public static void startApp() throws Exception {
-		baseUrl = "http://localhost:" + port;
-    	testServer = testServer(port, fakeApplication(new CoverageTestSettings(true)));
-    	start(testServer);
-    }
 	
     @Override
     public String getDefaultBaseUrl() {
@@ -88,11 +81,9 @@ public class FluentTestWithCoverage extends FluentAdapter {
     	}
     	return webDriver;
     }
-
-	@AfterClass
-	public static void stopApp() throws Exception {
-		stop(testServer);
-		webDriver = null; //very important -> getDefaultDriver()
+	
+	public CoverageTestSettings createTestSettings() {
+		return new CoverageTestSettings(true);
 	}
 
 }
