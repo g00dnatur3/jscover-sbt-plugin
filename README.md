@@ -34,7 +34,7 @@ libraryDependencies ++= Seq(
   "g00dnatur3" %% "jscover-play-utils" % "1.0.05"
 )
 ```
-There are threee primary settings `jscoverSourcePath`, `jscoverDestinationPath`, and `jscoverReportsDir`
+There are three primary settings `jscoverSourcePath`, `jscoverDestinationPath`, and `jscoverReportsDir`
 
 The `jscoverSourcePath` is the location where to find all your javascript files.
 
@@ -94,4 +94,51 @@ public class ExampleTest extends FluentTestWithCoverage {
 }
 ```
 
+Writing a Test with custom CoverageTestSettings
+-------------------------
+
+the FluentTestWithCoverage has a method `public CoverageTestSettings createTestSettings()`
+
+You can override this method to customize your test settings, for example:
+
+```
+@Override
+public CoverageTestSettings createTestSettings() {
+
+	return new CoverageTestSettings(true) {
+		
+	    @Override
+	    public <A> A getControllerInstance(Class<A> controllerClass) throws Exception {
+	        ...
+	    }
+	
+	    @Override
+	    public <T extends EssentialFilter> Class<T>[] filters() {
+	        ...
+	    }
+	    
+	    @Override
+	    public void onStart(Application application) {
+	    	...
+	    }
+		
+	};
+}
+```
+If you cannot tell, `CoverageTestSettings` extends `GlobalSettings`
+
+Viewing the reports
+-------------------------
+
+The command `play test` should execute your test cases and generate the final report.
+
+Now all you have left to do is view it!
+
+This is simple, just do `play run` and open your browser to the following url `http://localhost:9000/jscover/jscoverage.html`
+
+You should see the report.
+
+If you have customized the `jscoverDestinationPath` to be something different, then the url will be different.
+
+For example, if your `jscoverDestinationPath` is customized to "public/coverage" then the url would be `http://localhost:9000/coverage/jscoverage.html`
 
