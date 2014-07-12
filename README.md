@@ -147,5 +147,5 @@ If you have customized the `jscoverDestinationPath` to be something different, t
 
 For example, if your `jscoverDestinationPath` is customized to "public/coverage" then the url would be `http://localhost:9000/coverage/jscoverage.html`
 
-Please note: if any tests fail the coverage report will not be generated and available for viewing.
-To run individual tests, go into the play console and run `testOnly package.Classname`
+If any tests fail the final merged coverage report will not be generated and available for viewing.
+To run individual test classes, go into the play console and run `testOnly package.Classname`
