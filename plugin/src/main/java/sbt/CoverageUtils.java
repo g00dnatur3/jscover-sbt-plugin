@@ -23,7 +23,9 @@ public class CoverageUtils {
 		this.sourcePath = sourcePath;
 		this.destinationPath = destinationPath;
 		this.reportsPath = reportsPath;
-		
+	}
+	
+	private void prepareToGenerateInstrumentedCode() {
 		try {
 			File f = new File(destinationPath);
 			if (f.exists()) {
@@ -41,6 +43,7 @@ public class CoverageUtils {
 	}
 	
 	public void generateInstrumentedCode() {
+		prepareToGenerateInstrumentedCode();
 		String[] args = new String[]{
 	        "-fs",
 	        sourcePath,
