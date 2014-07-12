@@ -8,6 +8,7 @@ import static play.test.Helpers.testServer;
 import java.io.File;
 import java.io.FileWriter;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 import org.fluentlenium.core.FluentAdapter;
 import org.junit.Rule;
@@ -22,17 +23,11 @@ public class FluentTestWithCoverage extends FluentAdapter {
 	
 	protected TestServer testServer;
 	
-	protected String className;
-	
 	protected WebDriver webDriver;
 	
 	protected int port = 3333;
 	
 	protected String baseUrl;
-	
-	public FluentTestWithCoverage() {
-		className = getClass().getSimpleName();
-	}
 	
     @Rule
     public TestRule watchman = new TestWatcher() {
@@ -53,9 +48,11 @@ public class FluentTestWithCoverage extends FluentAdapter {
             try {
 				String json = (String) ((JavascriptExecutor) webDriver)
 						.executeScript("return jscoverage_serializeCoverageToJSON();");
-				File f = new File(CoverageTestSettings.REPORTS_DIR + "/" + className + "/");
+				File f = new File(CoverageTestSettings.REPORTS_DIR 
+						+ "/" + description.getClassName() 
+						+ "$" + description.getMethodName() + "/");
 				if (f.exists()) {
-					f.delete();
+					FileUtils.deleteDirectory(f);
 				}
 				f.mkdir();
 				FileWriter fw = new FileWriter(new File(f, "jscoverage.json"));
@@ -84,5 +81,5 @@ public class FluentTestWithCoverage extends FluentAdapter {
 	public CoverageTestSettings createTestSettings() {
 		return new CoverageTestSettings(true);
 	}
-
+	
 }

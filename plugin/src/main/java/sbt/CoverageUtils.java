@@ -23,15 +23,21 @@ public class CoverageUtils {
 		this.sourcePath = sourcePath;
 		this.destinationPath = destinationPath;
 		this.reportsPath = reportsPath;
-		File f = new File(destinationPath);
-		if (f.exists()) {
-			f.delete();
+		
+		try {
+			File f = new File(destinationPath);
+			if (f.exists()) {
+				FileUtils.deleteDirectory(f);
+			}
+			f = new File(reportsPath);
+			if (f.exists()) {
+				FileUtils.deleteDirectory(f);
+			}
+			f.mkdirs();
+		} catch (IOException e) {
+			System.out.println(e.getMessage());
+			throw new RuntimeException(e);
 		}
-		f = new File(reportsPath);
-		if (f.exists()) {
-			f.delete();
-		}
-		f.mkdirs();
 	}
 	
 	public void generateInstrumentedCode() {
@@ -43,6 +49,7 @@ public class CoverageUtils {
 		try {
 			Main.main(args);
 		} catch (IOException e) {
+			System.out.println(e.getMessage());
 			throw new RuntimeException(e);
 		}
 	}
@@ -62,6 +69,7 @@ public class CoverageUtils {
 			    out.close();
 			}
 		} catch (IOException e) {
+			System.out.println(e.getMessage());
 			throw new RuntimeException(e);
 		}
 	}
@@ -101,6 +109,7 @@ public class CoverageUtils {
 		    out.flush();
 		    out.close();
 		}catch (IOException e) {
+			System.out.println(e.getMessage());
 			throw new RuntimeException(e);
 		}
 	}
