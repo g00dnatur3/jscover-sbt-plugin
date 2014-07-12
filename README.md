@@ -44,7 +44,9 @@ The `jscoverDestinationPath` is where the (generated) instrumented javascript fi
 
 Default value: `public/jscover`
 
-The `jscoverReportsDir` is where the coverage reports json will be put. The FluentTestWithCoverage found within the `jscover-play-utils` dependency will actually generate the reports json for you-- but you can read the code to get a better understanding.
+The `jscoverReportsDir` is where the coverage reports json will be put. The FluentTestWithCoverage found within the `jscover-play-utils` dependency will actually generate the reports json for you.
+
+Default value: `public/jscover/reports`
 
 If you want to customize these settings, you can do the following inside your `build.sbt` file:
 
