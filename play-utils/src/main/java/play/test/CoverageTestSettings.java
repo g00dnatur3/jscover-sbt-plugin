@@ -16,6 +16,10 @@ public class CoverageTestSettings extends GlobalSettings {
 	
 	protected final boolean isJsCoverRoutingEnabled;
 	
+	public CoverageTestSettings() {
+		 this.isJsCoverRoutingEnabled = false;
+	}
+	
 	public CoverageTestSettings(boolean isJsCoverRoutingEnabled) {
 		 this.isJsCoverRoutingEnabled = isJsCoverRoutingEnabled;
 	}
