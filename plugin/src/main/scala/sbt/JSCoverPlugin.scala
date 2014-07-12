@@ -20,6 +20,8 @@ object JSCoverPlugin extends Plugin {
     
     lazy val generateInstrumentedCode = TaskKey[Unit]("generateInstrumentedCode")
     
+    lazy val generateRouteForDestination = TaskKey[Unit]("generateRouteForDestination")
+    
     lazy val jscoverSettings = Seq(
         
         jscoverSourcePath := "public/javascripts",
@@ -30,7 +32,11 @@ object JSCoverPlugin extends Plugin {
         
         initCoverageUtils <<= initCoverageUtilsTask,
         
-        generateInstrumentedCode <<= generateInstrumentedCodeTask dependsOn initCoverageUtils,
+        generateRouteForDestination <<= generateRouteForDestinationTask,
+        
+        compile in Compile <<= (compile in Compile) dependsOn generateRouteForDestination,
+        
+        generateInstrumentedCode <<= generateInstrumentedCodeTask,
 
 		test in Test <<= (test in Test) map { 
           (x) => 
@@ -49,7 +55,12 @@ object JSCoverPlugin extends Plugin {
         coverageUtils.init(source, destination, reportsDir)
     }
     
-    def generateInstrumentedCodeTask = (jscoverSourcePath, jscoverDestinationPath) map { (source, destination) =>
-      	coverageUtils.jscoverGenerateInstrumentedApp()
+    def generateInstrumentedCodeTask = (initCoverageUtils) map { (x) =>
+      	coverageUtils.generateInstrumentedCode()
     }
+
+    def generateRouteForDestinationTask = (initCoverageUtils) map { (x) =>
+      	coverageUtils.generateRouteForDestination();
+    }
+    
 }
