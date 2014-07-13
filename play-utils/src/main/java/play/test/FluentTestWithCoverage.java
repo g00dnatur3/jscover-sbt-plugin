@@ -27,7 +27,7 @@ public class FluentTestWithCoverage extends FluentAdapter {
 	
 	protected int port = 3333;
 	
-	protected String baseUrl = "http://localhost:" + port;;
+	protected String baseUrl = "http://localhost:" + port;
 	
     @Rule
     public TestRule watchman = new TestWatcher() {
