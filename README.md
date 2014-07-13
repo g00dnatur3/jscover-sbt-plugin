@@ -178,7 +178,7 @@ Most likely you also have the following route inside your `conf/routes` file
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
 ```
 
-To solve this problem, simple change `@routes.Assets.at("javascripts/jquery-1.9.0.min.js")` to be `/assets/javascripts/jquery-1.9.0.min.js`
+To solve this problem, change `@routes.Assets.at("javascripts/jquery-1.9.0.min.js")` to be `/assets/javascripts/jquery-1.9.0.min.js`
 
 This is a better approach anyways, I never did like the default `@routes.Assets.at(` making my html look dirty.
 
