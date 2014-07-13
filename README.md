@@ -153,7 +153,7 @@ To run individual test classes, go into the play console and run `testOnly packa
 Known issues and workarounds:
 -------------------------
 
-The generared route bug:
+The routing bug:
 
 ```
 [error] Unspecified value parameter file.
