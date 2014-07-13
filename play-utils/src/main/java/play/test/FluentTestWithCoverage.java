@@ -27,14 +27,13 @@ public class FluentTestWithCoverage extends FluentAdapter {
 	
 	protected int port = 3333;
 	
-	protected String baseUrl;
+	protected String baseUrl = "http://localhost:" + port;;
 	
     @Rule
     public TestRule watchman = new TestWatcher() {
         @Override
         public void starting(Description description) {
             super.starting(description);
-    		baseUrl = "http://localhost:" + port;
         	testServer = testServer(port, fakeApplication(createTestSettings()));
         	start(testServer);
             initFluent(getDefaultDriver()).withDefaultUrl(getDefaultBaseUrl());
