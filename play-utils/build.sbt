@@ -4,7 +4,7 @@ name := "jscover-play-utils"
 
 organization := "g00dnatur3"
 
-version := "1.0.09"
+version := "1.0.10"
 
 bintrayPublishSettings
 

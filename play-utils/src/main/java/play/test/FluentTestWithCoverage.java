@@ -80,7 +80,7 @@ public class FluentTestWithCoverage extends FluentAdapter {
     }
 	
 	public CoverageTestSettings createTestSettings() {
-		return new CoverageTestSettings(true);
+		return new CoverageTestSettings();
 	}
 	
 }

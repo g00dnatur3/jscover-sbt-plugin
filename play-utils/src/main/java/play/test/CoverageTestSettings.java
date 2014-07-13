@@ -28,8 +28,9 @@ public class CoverageTestSettings extends GlobalSettings {
     public Handler onRouteRequest(RequestHeader req) {
     	String sourcePath = SOURCE_PATH.replace("public", "");    	
     	String destinationPath = DESTINATION_PATH;
-    	if (isJsCoverRoutingEnabled && req.method().equals("GET") && req.path().startsWith(sourcePath)) {
-    		String file = req.path().replace(sourcePath + "/", "");
+    	if (isJsCoverRoutingEnabled && req.method().equals("GET") && req.path().contains(sourcePath)) {
+    		int index = req.path().indexOf(sourcePath);
+    		String file = req.path().substring(index + sourcePath.length()+1);
     		return controllers.Assets.at("/" + destinationPath, file);
     	}
         return super.onRouteRequest(req);
