@@ -31,7 +31,7 @@ buildInfoPackage := "sbt"
 resolvers += "play-utils" at "http://dl.bintray.com/g00dnatur3/play-utils/"
 
 libraryDependencies ++= Seq(
-  "g00dnatur3" %% "jscover-play-utils" % "1.0.09"
+  "g00dnatur3" %% "jscover-play-utils" % "1.0.10"
 )
 ```
 There are three primary settings `jscoverSourcePath`, `jscoverDestinationPath`, and `jscoverReportsDir`
@@ -70,7 +70,7 @@ buildInfoPackage := "sbt"
 resolvers += "play-utils" at "http://dl.bintray.com/g00dnatur3/play-utils/"
 
 libraryDependencies ++= Seq(
-  "g00dnatur3" %% "jscover-play-utils" % "1.0.09"
+  "g00dnatur3" %% "jscover-play-utils" % "1.0.10"
 )
 ```
 IMPORTANT:  If you do decided to customize these settings, make sure to keep them within the "public" folder (for obvious reasons)
