@@ -1,4 +1,4 @@
-Example Play Application
+jscover-sbt-plugin example application
 =====================================
 
 This project is a simple example of the jscover-sbt-plugin in action.
