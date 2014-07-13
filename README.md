@@ -42,7 +42,7 @@ Default value: `public/javascripts`
 
 The `jscoverDestinationPath` is where the (generated) instrumented javascript files will be put.
 
-Default value: `public/jscover`
+Default value: `public/jscover/javascripts`
 
 The `jscoverReportsDir` is where the coverage reports json will be put. The FluentTestWithCoverage found within the `jscover-play-utils` dependency will actually generate the reports json for you.
 
@@ -139,13 +139,13 @@ The command `play test` should execute your test cases and generate the final re
 
 Now all you have left to do is view it!
 
-This is simple, just do `play run` and open your browser to the following url `http://localhost:9000/jscover/jscoverage.html`
+This is simple, just do `play run` and open your browser to the following url `http://localhost:9000/jscover/javascripts/jscoverage.html`
 
 You should see the report.
 
 If you have customized the `jscoverDestinationPath` to be something different, then the url will be different.
 
-For example, if your `jscoverDestinationPath` is customized to "public/coverage" then the url would be `http://localhost:9000/coverage/jscoverage.html`
+For example, if your `jscoverDestinationPath` is customized to "public/coverage/js" then the url would be `http://localhost:9000/coverage/js/jscoverage.html`
 
 If any tests fail the final merged coverage report will not be generated and available for viewing.
 To run individual test classes, go into the play console and run `testOnly package.Classname`
