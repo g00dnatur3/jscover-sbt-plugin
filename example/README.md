@@ -1,4 +1,4 @@
-jscover-sbt-plugin example application
+Example application
 =====================================
 
 This project is a simple example of the jscover-sbt-plugin in action.
