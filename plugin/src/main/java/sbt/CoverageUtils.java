@@ -85,9 +85,11 @@ public class CoverageUtils {
 		} else {
 			if (reportsDir.listFiles().length == 1) {
 				File src = new File(reportsDir.listFiles()[0].getAbsolutePath(), "jscoverage.json");
-				File dst = new File("public/jscover/advisor", "jscoverage.json");
-				IoUtils ioUtils = new IoUtils();
-				ioUtils.copy(src, dst);
+				if (src.exists()) {
+					File dst = new File(destinationPath, "jscoverage.json");
+					IoUtils ioUtils = new IoUtils();
+					ioUtils.copy(src, dst);	
+				}
 			} else if (reportsDir.listFiles().length > 1) {
 				List<String> args = new ArrayList<String>();
 				args.add("--merge");
@@ -97,7 +99,7 @@ public class CoverageUtils {
 					}
 				}
 				//the last arg is the destination
-				args.add(new File("public/jscover/advisor").getAbsolutePath());
+				args.add(new File(destinationPath).getAbsolutePath());
 				try {
 					jscover.report.Main.main(args.toArray(new String[args.size()]));
 				} catch (IOException e) {
@@ -107,7 +109,7 @@ public class CoverageUtils {
 			}
 		}
 		try(PrintWriter out = new PrintWriter(new BufferedWriter(
-				new FileWriter("public/jscover/advisor/jscoverage.js", true)))) {
+				new FileWriter(destinationPath + "/jscoverage.js", true)))) {
 		    out.println("jscoverage_isReport = true;");
 		    out.flush();
 		    out.close();

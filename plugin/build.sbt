@@ -6,7 +6,7 @@ name := "jscover-sbt-plugin"
 
 organization := "g00dnatur3"
 
-version := "1.0.04"
+version := "1.0.05"
 
 publishMavenStyle := false
 
