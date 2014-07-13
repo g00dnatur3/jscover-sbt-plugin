@@ -169,7 +169,7 @@ The jscover-sbt-plugin will append a new route to the bottom of the `conf/routes
 GET    /jscover/javascripts/*file    controllers.Assets.at(path="/public/jscover/javascripts", file)
 ```
 
-This route does not break the compile, however if you are using the routing tehcnique of `@routes.Assets.at("javascripts/jquery-1.9.0.min.js")` inside your scala views, then you will have a problem.
+This route does not break the compile, however if you are using the routing technique of `@routes.Assets.at("javascripts/jquery-1.9.0.min.js")` inside your scala views, then you will have a problem.
 
 Most likely you also have the following route inside your `conf/routes` file
 
