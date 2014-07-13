@@ -27,7 +27,9 @@ public class FluentTestWithCoverage extends FluentAdapter {
 	
 	protected int port = 3333;
 	
-	protected String baseUrl = "http://localhost:" + port;
+	protected String host = "localhost";
+	
+	protected String scheme = "http";
 	
     @Rule
     public TestRule watchman = new TestWatcher() {
@@ -66,7 +68,7 @@ public class FluentTestWithCoverage extends FluentAdapter {
 	
     @Override
     public String getDefaultBaseUrl() {
-        return baseUrl;
+        return scheme + "://" + host + ":" + port;
     }
 	
     @Override
