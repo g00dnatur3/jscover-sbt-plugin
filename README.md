@@ -1,9 +1,9 @@
 jscover-sbt-plugin
 ==================
 
-A plugin for sbt & play to enable getting javascript code coverage for functional style tests thru the use of JSCover library.
+A plugin for Play Framework to enable getting javascript code coverage for functional style tests thru the use of JSCover library.
 
-This plugin was developed with play 2.2.1, but should work for all 2.2.x versions.
+This plugin was developed with Play Framework 2.2.1, but should work for all 2.2.x versions.
 
 Installation Guide
 -------------------------
