@@ -1,7 +1,7 @@
 jscover-play-utils
 ======================
 
-This projetc provides some helper classes to
+This project provides some helper classes to
 
  - quickly add coverage to existing FluentLenium or Selenium style tests
 
