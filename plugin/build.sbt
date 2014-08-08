@@ -19,6 +19,6 @@ licenses += ("Apache-2.0", url("http://www.apache.org/licenses/LICENSE-2.0.html"
 bintrayOrganization in bintray := None
 
 libraryDependencies ++= Seq(
-  "com.github.tntim96" % "JSCover" % "1.0.11",
+  "com.github.tntim96" % "JSCover" % "1.0.13",
   "commons-io" % "commons-io" % "2.4"
 )

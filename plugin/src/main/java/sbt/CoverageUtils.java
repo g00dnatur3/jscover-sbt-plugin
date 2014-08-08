@@ -49,12 +49,7 @@ public class CoverageUtils {
 	        sourcePath,
 	        destinationPath
 	    };
-		try {
-			Main.main(args);
-		} catch (IOException e) {
-			System.out.println(e.getMessage());
-			throw new RuntimeException(e);
-		}
+        new Main().runMain(args);
 	}
 	
 	public void generateRouteForDestination() {
