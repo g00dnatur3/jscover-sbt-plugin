@@ -7,12 +7,8 @@ resolvers += "Typesafe repository" at "http://repo.typesafe.com/typesafe/release
 // Use the Play sbt plugin for Play projects
 addSbtPlugin("com.typesafe.play" % "sbt-plugin" % "2.2.1")
 
-//resolvers += Resolver.url("sbt-plugins", url("http://dl.bintray.com/g00dnatur3/sbt-plugins"))(Resolver.ivyStylePatterns)
+resolvers += Resolver.url("sbt-plugins", url("http://dl.bintray.com/g00dnatur3/sbt-plugins"))(Resolver.ivyStylePatterns)
 
-//addSbtPlugin("g00dnatur3" % "jscover-sbt-plugin" % "1.0.05")
-
-lazy val root = project.in( file(".") ).dependsOn(
-	uri("file:///Users/user/jscover-sbt-plugin/plugin")
-)
+addSbtPlugin("g00dnatur3" % "jscover-sbt-plugin" % "1.0.06")
 
 addSbtPlugin("com.eed3si9n" % "sbt-buildinfo" % "0.3.2")
