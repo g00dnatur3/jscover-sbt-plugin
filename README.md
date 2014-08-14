@@ -34,7 +34,7 @@ libraryDependencies ++= Seq(
   "g00dnatur3" %% "jscover-play-utils" % "1.0.10"
 )
 ```
-There are three primary settings `jscoverSourcePath`, `jscoverDestinationPath`, and `jscoverReportsDir`
+There are four primary settings `jscoverSourcePath`, `jscoverDestinationPath`, `jscoverReportsDir`, `jscoverNoInstrumentPaths`
 
 The `jscoverSourcePath` is the location where to find all your javascript files.
 
@@ -48,6 +48,10 @@ The `jscoverReportsDir` is where the coverage reports json will be put. The Flue
 
 Default value: `public/jscover/reports`
 
+The `jscoverNoInstrumentPaths` is a comma-delimited list of paths to ignore when instrumenting the javascript.
+
+Default value: `null`
+
 If you want to customize these settings, you can do the following inside your `build.sbt` file:
 
 ```
@@ -58,6 +62,8 @@ jscoverSourcePath := "public/<your custom source path>"
 jscoverDestinationPath := "public/<your custom destination path>"
 
 jscoverReportsDir := "public/<your custom reports dir>"
+
+jscoverNoInstrumentPaths := "jquery-1.9.0.min.js,lib"
 
 buildInfoSettings
 
