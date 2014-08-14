@@ -34,7 +34,7 @@ libraryDependencies ++= Seq(
   "g00dnatur3" %% "jscover-play-utils" % "1.0.10"
 )
 ```
-There are four settings `jscoverSourcePath`, `jscoverDestinationPath`, `jscoverReportsDir`, `jscoverNoInstrumentPaths`
+There are four settings `jscoverSourcePath`, `jscoverDestinationPath`, `jscoverReportsDir`, and `jscoverNoInstrumentPaths`
 
 The `jscoverSourcePath` is the location where to find all your javascript files.
 
