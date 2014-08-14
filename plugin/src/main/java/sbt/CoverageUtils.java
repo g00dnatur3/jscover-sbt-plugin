@@ -18,11 +18,13 @@ public class CoverageUtils {
 	public String sourcePath;
 	public String destinationPath;
 	public String reportsPath;
+	public String noInstrumentPaths;
 	
-	public void init(String sourcePath, String destinationPath, String reportsPath) {
+	public void init(String sourcePath, String destinationPath, String reportsPath, String noInstrumentPaths) {
 		this.sourcePath = sourcePath;
 		this.destinationPath = destinationPath;
 		this.reportsPath = reportsPath;
+		this.noInstrumentPaths = noInstrumentPaths;
 	}
 	
 	private void prepareToGenerateInstrumentedCode() {
@@ -42,13 +44,28 @@ public class CoverageUtils {
 		}
 	}
 	
-	public void generateInstrumentedCode() {
+	public void generateInstrumentedCode() throws IOException {
 		prepareToGenerateInstrumentedCode();
-		String[] args = new String[]{
-	        "-fs",
-	        sourcePath,
-	        destinationPath
-	    };
+		String[] args;
+		if (noInstrumentPaths != null && noInstrumentPaths.length() > 0) {
+			String[] paths = noInstrumentPaths.split(",");
+			List<String> argsList = new ArrayList<String>();
+			argsList.add("-fs");
+			argsList.add("--local-storage");
+			for (String path : paths) {
+				argsList.add("--no-instrument=" + path);
+			}
+			argsList.add(sourcePath);
+			argsList.add(destinationPath);
+			args = argsList.toArray(new String[]{});
+		} else {
+			args = new String[]{
+		        "-fs",
+		        "--local-storage",
+		        sourcePath,
+		        destinationPath
+		    };
+		}
         new Main().runMain(args);
 	}
 	

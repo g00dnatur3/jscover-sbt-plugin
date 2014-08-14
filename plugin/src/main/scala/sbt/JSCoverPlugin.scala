@@ -16,7 +16,7 @@ object JSCoverPlugin extends Plugin {
     
     lazy val jscoverReportsDir = SettingKey[String]("jscoverReportsDir", "The location of the json coverage reports")
     
-    lazy val initCoverageUtils = TaskKey[Unit]("initCoverageUtils")
+    lazy val jscoverNoInstrumentPaths = SettingKey[String]("jscoverNoInstrumentPaths", "Comma delimited list of paths to ignore when instrumenting")
     
     lazy val generateInstrumentedCode = TaskKey[Unit]("generateInstrumentedCode")
     
@@ -29,8 +29,6 @@ object JSCoverPlugin extends Plugin {
         jscoverDestinationPath := "public/jscover/javascripts",
         
         jscoverReportsDir := "public/jscover/reports",
-        
-        initCoverageUtils <<= initCoverageUtilsTask,
         
         generateRouteForDestination <<= generateRouteForDestinationTask,
         
@@ -49,17 +47,17 @@ object JSCoverPlugin extends Plugin {
        	} dependsOn generateInstrumentedCode
     )
     
-    def initCoverageUtilsTask = (jscoverSourcePath, jscoverDestinationPath, jscoverReportsDir) map { 
-        (source, destination, reportsDir) =>
+    def initCoverageTask = (jscoverSourcePath, jscoverDestinationPath, jscoverReportsDir, jscoverNoInstrumentPaths) map { 
+        (source, destination, reportsDir, noInstrumentPaths) =>
           
-        coverageUtils.init(source, destination, reportsDir)
+        coverageUtils.init(source, destination, reportsDir, noInstrumentPaths)
     }
     
-    def generateInstrumentedCodeTask = (initCoverageUtils) map { (x) =>
+    def generateInstrumentedCodeTask = (initCoverageTask) map { (x) =>
       	coverageUtils.generateInstrumentedCode()
     }
 
-    def generateRouteForDestinationTask = (initCoverageUtils) map { (x) =>
+    def generateRouteForDestinationTask = (initCoverageTask) map { (x) =>
       	coverageUtils.generateRouteForDestination();
     }
     

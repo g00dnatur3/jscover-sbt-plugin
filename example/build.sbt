@@ -12,6 +12,8 @@ play.Project.playJavaSettings
 
 JSCoverPlugin.jscoverSettings
 
+jscoverNoInstrumentPaths := "jquery-1.9.0.min.js,lib"
+
 buildInfoSettings
 
 sourceGenerators in Compile <+= buildInfo

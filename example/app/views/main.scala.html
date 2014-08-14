@@ -1,4 +1,4 @@
-@(title: String)(content: Html)
+@(title: String, pageScripts: Html = Html(""))(content: Html)
 
 <!DOCTYPE html>
 
@@ -7,7 +7,9 @@
         <title>@title</title>
         <link rel="stylesheet" media="screen" href="/assets/stylesheets/main.css")">
         <link rel="shortcut icon" type="image/png" href="/assets/images/favicon.png")">
-        <script src="/assets/javascripts/jquery-1.9.0.min.js")" type="text/javascript"></script>
+        <script src="/assets/javascripts/jquery-1.9.0.min.js" type="text/javascript"></script>
+        <script src="/assets/javascripts/lib/no-instrument-example.js" type="text/javascript"></script>
+        @pageScripts
     </head>
     <body>
         @content
